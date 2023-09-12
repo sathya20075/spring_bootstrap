@@ -16,7 +16,7 @@ node{
        }
     }
     stage('Build project'){
-      sh('echo $pwd')
+      sh('echo `pwd`')
       sh('cd /initial && mvn clean install')
     }
  }catch(e){
