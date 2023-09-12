@@ -5,7 +5,7 @@ node{
       string(name: 'buildResult')
    }
    tools{
-      maven 'MAVEN'
+      maven 'Maven'
    }
     
     stage('Clone project'){
@@ -20,7 +20,10 @@ node{
        }
     }
     stage('Build project'){
-       sh('mvn install')
+      withMaven{
+          sh('mvn clean install')
+      }
+       
     }
  }catch(e){
       currentBuild.result = 'Failed'
