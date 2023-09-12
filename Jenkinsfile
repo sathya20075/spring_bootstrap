@@ -80,7 +80,7 @@ node{
     }
  }catch(e){
       currentBuild.result = 'Failed'
-      createJiraIfBuildFailed(e)
+      createJiraIfBuildFailed()
       throw(e)
 
       //create new jira issue
