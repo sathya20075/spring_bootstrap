@@ -3,7 +3,7 @@ node{
  try{
    parameters{
      int(name: 'buildId')
-      boolean(name: 'buildStatus')
+     boolean(name: 'buildStatus')
    }
     
     stage('Clone project'){
@@ -12,8 +12,8 @@ node{
            branch = params.branch
        }
        dir('self'){
-        git credentialsId: '',
-            url:'',
+        git credentialsId: 'gitcredentials',
+            url:'https://github.com/sathya20075/spring_bootstrap.git',
             branch: branch
        }
     }
