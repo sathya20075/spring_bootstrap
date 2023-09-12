@@ -4,6 +4,9 @@ node{
    parameters{
       string(name: 'buildResult')
    }
+   tools{
+      maven 'MAVEN'
+   }
     
     stage('Clone project'){
        def branch = 'master'
