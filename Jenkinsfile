@@ -18,7 +18,8 @@ node{
     stage('Build project'){
       sh('echo `pwd`')
       sh 'ls -ltr'
-      sh('cd /initial && mvn clean install')
+      sh('cd self')
+      sh 'ls -ltr'
     }
  }catch(e){
       currentBuild.result = 'Failed'
