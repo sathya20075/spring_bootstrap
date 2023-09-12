@@ -16,7 +16,7 @@ node{
        }
     }
     stage('Build project'){
-      withMaven('Maven'){
+      withMaven(traceability: true){
           sh('mvn clean install')
       }
        
