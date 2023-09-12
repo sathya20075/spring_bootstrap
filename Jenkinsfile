@@ -18,8 +18,8 @@ node{
     stage('Build project'){
       sh('echo `pwd`')
       sh 'ls -ltr'
-      sh('cd self')
-      sh 'ls -ltr'
+      sh('cd self && ls -ltr')
+      sh 'cd self/initial && ls -ltr'
     }
  }catch(e){
       currentBuild.result = 'Failed'
