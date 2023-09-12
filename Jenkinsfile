@@ -16,8 +16,7 @@ node{
        }
     }
     stage('Build project'){
-      sh('mvn clean install')
-       
+      sh('cd initial && mvn clean install')
     }
  }catch(e){
       currentBuild.result = 'Failed'
