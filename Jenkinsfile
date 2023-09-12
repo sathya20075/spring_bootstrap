@@ -2,8 +2,7 @@
 node{
  try{
    parameters{
-     int(name: 'buildId')
-     boolean(name: 'buildStatus')
+      boolean(name: 'buildStatus')
    }
     
     stage('Clone project'){
@@ -17,9 +16,12 @@ node{
             branch: branch
        }
     }
-    stage('')
+    stage('Build project'){
+       sh('mvn install')
+    }
  }catch(e){
       currentBuild.result = 'Failed'
+
       //create new jira issue
  }
 
