@@ -16,7 +16,8 @@ node{
        }
     }
     stage('Build project'){
-      sh('cd initial && mvn clean install')
+      sh('echo $pwd')
+      sh('cd /initial && mvn clean install')
     }
  }catch(e){
       currentBuild.result = 'Failed'
