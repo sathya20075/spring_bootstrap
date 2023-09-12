@@ -17,6 +17,7 @@ node{
     }
     stage('Build project'){
       sh('echo `pwd`')
+      sh 'ls -ltr'
       sh('cd /initial && mvn clean install')
     }
  }catch(e){
