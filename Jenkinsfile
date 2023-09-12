@@ -1,4 +1,21 @@
 #!/usr/bin/env groovy
+
+/*
+  This method takes the below arguments:
+  JiraProjectKey -
+  Assignee -
+  Description of Test -
+  Component name -
+  Issue Priority - Highest, High, Medium, Low, Lowest
+  Issue Type -  Task, Sub-task, Epic
+  Action Id on success
+ */
+
+ def createJiraIfBuildFailed(){
+     println "Build failed!! Creating a new Jira Issue!"
+
+ }
+ 
 node{
  try{
    parameters{
@@ -35,21 +52,7 @@ node{
 
  }
 
- /*
-  This method takes the below arguments:
-  JiraProjectKey -
-  Assignee -
-  Description of Test -
-  Component name -
-  Issue Priority - Highest, High, Medium, Low, Lowest
-  Issue Type -  Task, Sub-task, Epic
-  Action Id on success
- */
-
- def createJiraIfBuildFailed(){
-     println "Build failed!! Creating a new Jira Issue!"
-
- }
+ 
 
     
 }
