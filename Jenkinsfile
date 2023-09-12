@@ -2,7 +2,7 @@
 node{
  try{
    parameters{
-      boolean(name: 'buildStatus')
+      string(name: 'buildResult')
    }
     
     stage('Clone project'){
