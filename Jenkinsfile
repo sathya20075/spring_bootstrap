@@ -13,6 +13,7 @@
 
  def createJiraIfBuildFailed(){
      println "Build failed!! Creating a new Jira Issue!"
+     def response = sh '''
      curl --request POST \
   --url 'https://testjenkins20075.atlassian.net/rest/api/3/issue' \
   --user 'sathya20075@gmail.com:ATATT3xFfGF0UrBZICswbQS-jMmqxmBWNVqd_KD4aT09QhGBQnW9bWnm_6zNROjSKcAg1eYCLkVAIXzIbjIUmN5HKnISMWSm2h9cbfGIfj3o5b-JSdjqunoaZ99Mjy99aDRr3LN1WIXkPVRkRrBq4MszEbBk826mfyFDtLgxXSeCwzik8Bc8Ou4=69DDBF50' \
@@ -47,7 +48,8 @@
    "update":{
       
    }
-}'
+}' 
+'''
 
  }
 
