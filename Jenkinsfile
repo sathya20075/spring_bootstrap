@@ -16,10 +16,11 @@ node{
        }
     }
     stage('Build project'){
-      sh('echo `pwd`')
-      sh 'ls -ltr'
-      sh('cd self && ls -ltr')
-      sh 'cd self/initial && ls -ltr'
+      sh '''
+        echo 'Building the spring bootstrap project'
+        cd self/initial
+        mvn clean install
+      '''
     }
  }catch(e){
       currentBuild.result = 'Failed'
